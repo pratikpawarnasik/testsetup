@@ -1,0 +1,31 @@
+<div class="">
+  <h3 style="background: #dae0c7" ng-if="message !==''">{{message | titlecase}}</h3>
+<h1>Hello {{userName  | titlecase}},Welcome to Dashboard!</h1>
+<button class="btn btn-danger pull-right" (click)="logout()">LogOut</button>
+</div>
+<div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name <br>(User Name)</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Website</th>
+        <th>Company</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let myData of jsonData let i= index;">
+        <td>{{myData.id}}</td>
+        <td>{{myData.name}}<br>({{myData.username}})</td>
+        <td>{{myData.email}}</td>
+        <td>{{myData.address.street}}<br>{{myData.address.suit}}</td>
+        <td>{{myData.phone}}</td>
+        <td>{{myData.website}}</td>
+        <td>{{myData.company.name}}<br>{{myData.company.catchPhrase}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
